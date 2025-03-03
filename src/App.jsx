@@ -1,28 +1,30 @@
-import React from 'react'
-import NavBar from './Components/NavBar'
+import { Routes, Route } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
-import { Route, Routes } from 'react-router-dom'
+import NavBar from './Components/NavBar'
+import Footer from './Components/Footer'
+import Home from './pages/Home'
+import Properties from './pages/Properties'
+import PropertyDetails from './Pages/PropertyDetails'
+import About from './pages/About'
+import Contact from './pages/Contact'
 
-const App = () => {
+function App() {
   return (
-   <>
-   <div className='flex flex-col min-h-screen'>
-   <NavBar/>
-
-   <main className="flex-grow">
+    <div className="flex flex-col min-h-screen">
+      <NavBar />
+      <main className="flex-grow">
         <AnimatePresence mode="wait">
           <Routes>
-            {/* <Route path="/" element={<Home />} />
+            <Route path="/" element={<Home />} />
             <Route path="/properties" element={<Properties />} />
             <Route path="/properties/:id" element={<PropertyDetails />} />
             <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} /> */}
+            <Route path="/contact" element={<Contact />} />
           </Routes>
         </AnimatePresence>
       </main>
-   </div>
-   
-   </>
+      <Footer />
+    </div>
   )
 }
 
